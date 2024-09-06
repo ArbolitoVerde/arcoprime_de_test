@@ -29,12 +29,7 @@ class SequenceGen:
     
     @measure_execution_time
     def nucleotido_counter(self) -> list:
-        output = []
-        for n in self.NUCLEOTIDOS:
-            quantity = self.sequence.count(n)
-            output.append((n, quantity))
-
-        return output
+        return [(n, self.sequence.count(n)) for n in self.NUCLEOTIDOS]
     
     @measure_execution_time
     def sub_sequence_counter(self, sub_sequence: str) -> int:
